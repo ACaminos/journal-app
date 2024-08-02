@@ -1,4 +1,4 @@
-import { checkingCredential } from "../store/auth/authSlice"
+import { checkingCredential } from "./authSlice"
 
 export const checkingAuthentication = ( email, password ) => {
     return async ( dispatch ) => {
@@ -10,4 +10,4 @@ export const startGoogleSignIn = () => {
     return async ( dispatch ) => {
         dispatch( checkingCredential() );
     }
-}
+}   
