@@ -1,5 +1,7 @@
+import { useMemo } from "react"
+
 // Redux
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 // React Router Dom
 import { Link as RouterLink } from "react-router-dom"
@@ -19,12 +21,16 @@ import { Button, Grid, Link, TextField, Typography } from "@mui/material"
 
 
 export const LoginPage = () => {
+  const { status } = useSelector( state => state.auth );
+
   const dispatch = useDispatch()
 
   const { email, password, onInputChange } = useForm({
     email : 'acaminos@google.com',
     password : '12345'
   })
+
+  const isAuthenticating = useMemo( () => status === 'checking', [ status ] );
 
   const onSubmit = ( event ) => {
     event.preventDefault();
@@ -71,11 +77,11 @@ export const LoginPage = () => {
           <Grid container spacing={ 2 } sx={ { marginBottom: 2, marginTop : 1 } }>
 
             <Grid item xs={ 12 } sm={ 6 }>
-              <Button type="submit" variant="contained" fullWidth>Login</Button>
+              <Button type="submit" variant="contained" disabled={ isAuthenticating } fullWidth>Login</Button>
             </Grid>
 
             <Grid item xs={ 12 } sm={ 6 }>
-              <Button variant="contained" fullWidth onClick={ onGoogleSingIn }>
+              <Button variant="contained" disabled={ isAuthenticating } fullWidth onClick={ onGoogleSingIn }>
                 <Google/>
                 <Typography sx={ { marginLeft : 1 } }>Google</Typography>
               </Button>
