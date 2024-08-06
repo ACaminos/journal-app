@@ -1,8 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-export const useForm = ( initialForm = {}, formaValidations = {} ) => {
+export const useForm = ( initialForm = {}, formValidations = {} ) => {
 
     const [ formState, setFormState ] = useState( initialForm );
+    const [formValidation, setformValidation] = useState( {} )
+
+    useEffect( () => {
+        createValidators();
+    }, [ formState ] )
+
+    const isFormValid = useMemo( () => {
+        for ( const formValue of Object.keys( formValidation ) ){
+            if( formValidation[ formValue ] != null ) return false;
+        }
+    }, [ formValidation ] )
 
     const onInputChange = ({ target }) => {
         const { name, value } = target;
@@ -16,10 +27,27 @@ export const useForm = ( initialForm = {}, formaValidations = {} ) => {
         setFormState( initialForm );
     }
 
+    const createValidators = () => {
+        const formCheckedValues = {};
+
+        for ( const formField of Object.keys( formValidations ) ){
+
+            const [ fn, errorMessage ] = formValidations[ formField ]; // Se desestructura fn y errorMessage de formValidations basado en formField
+
+            formCheckedValues[`${ formField }Valid` ] = fn( formState[ formField ] ) ? null : errorMessage;
+        }
+
+        setformValidation( formCheckedValues );
+        console.log( formValidation )
+    }
+
     return {
         ...formState,
         formState,
         onInputChange,
         onResetForm,
+
+        ...formValidation,
+        isFormValid,
     }
 }

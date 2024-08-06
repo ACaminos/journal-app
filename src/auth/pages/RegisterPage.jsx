@@ -3,7 +3,7 @@ import { Link as RouterLink } from "react-router-dom"
 import { AuthLayout } from "../layout/AuthLayout"
 
 //Custom Hook
-import { useForm } from "../../hooks/useForm"
+import { useForm } from "../../hooks/"
 
 //Resources
 import { Button, Grid, Link, TextField, Typography } from "@mui/material"
@@ -15,17 +15,14 @@ const formData = {
 }
 
 const formValidations = {
-  email : [ ( value ) => value.include( '@' ), 'El correo debe de tener un @' ], // La primera posicion del arreglo es la funcion que evalua, el segundo es el mensaje del error
+  email : [ ( value ) => value.includes( '@' ), 'El correo debe de tener un @' ], // La primera posicion del arreglo es la funcion que evalua, el segundo es el mensaje del error
   password : [ ( value ) => value.length >= 6, 'El password debe de tener mas de 6 letras' ], // La primera posicion del arreglo es la funcion que evalua, el segundo es el mensaje del error
-  displayName : [ ( value ) => value.length >=1, 'El nombre es obligatorio' ], // La primera posicion del arreglo es la funcion que evalua, el segundo es el mensaje del error
+  displayName : [ ( value ) => value.length >= 0, 'El nombre es obligatorio' ], // La primera posicion del arreglo es la funcion que evalua, el segundo es el mensaje del error
 }
 
 export const RegisterPage = () => {
 
-  const {
-    formState, displayName, email, password, onInputChange,
-    isFormValid, displayNameValid, emailValid, passwordValid,
-  } = useForm( formData, formValidations )
+  const { formState, isFormValid, displayName, displayNameValid, email, emailValid, password, passwordValid, onInputChange } = useForm( formData, formValidations )
 
   const onSubmit = ( event ) => {
     event.preventDefault();
@@ -34,6 +31,7 @@ export const RegisterPage = () => {
 
   return (
     <AuthLayout title="Crear cuenta">
+      <h2>FormValid : { isFormValid ? 'Valido' : 'Incorrecto' }</h2>
       <form onSubmit={ onSubmit }>
         <Grid container>
           <Grid item xs={ 12 } sx={ { mt : 2 } }>
