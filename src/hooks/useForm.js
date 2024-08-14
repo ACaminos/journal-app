@@ -13,6 +13,7 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => {
         for ( const formValue of Object.keys( formValidation ) ){
             if( formValidation[ formValue ] != null ) return false;
         }
+        return true;
     }, [ formValidation ] )
 
     const onInputChange = ({ target }) => {
@@ -38,7 +39,6 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => {
         }
 
         setformValidation( formCheckedValues );
-        console.log( formValidation )
     }
 
     return {
