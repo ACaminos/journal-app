@@ -2,12 +2,11 @@ import { Box, Toolbar } from '@mui/material'
 import React from 'react'
 import { NavBar, SideBar } from '../components/';
 
-
 const drawerWidth = 248;
 
 export const JournalLayout = ( { children } ) => {
   return (
-    <Box sx={ { display: 'flex' } }>
+    <Box className='animate__animated animate__fadeIn animate__faster' sx={ { display: 'flex' } }>
         {/* Navbar drawerWidth */}
         <NavBar drawerWidth={ drawerWidth } />
 

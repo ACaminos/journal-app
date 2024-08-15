@@ -37,7 +37,6 @@ export const registerUserWithEmailPassword = async( { email, password, displayNa
         const { uid, photoURL } = resp.user;
         // console.log( 'acaa -->', resp )
 
-        // TODO: Actualizar el displayName en Firebase
         await updateProfile( FirebaseAuth.currentUser, { displayName } );
 
         return{
@@ -64,4 +63,8 @@ export const loginWithEmailPassword = async( { email, password } ) => {
         console.log( error )
         return{ ok : false, errorMessage : error.message }
     }
+}
+
+export const logoutFirebase = async() => {
+    return await FirebaseAuth.signOut();
 }

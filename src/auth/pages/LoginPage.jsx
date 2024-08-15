@@ -39,17 +39,13 @@ export const LoginPage = () => {
     console.log( { email, password } );
   }
 
-  const onGoogleSingIn = () => {
-    dispatch( startGoogleSignIn() )
-  }
+  const onGoogleSingIn = () => { dispatch( startGoogleSignIn() ) }
 
-  const onLoginSignIn = () => {
-    dispatch( startLoginWithEmailPassword( { email, password } ) )
-  }
+  const onLoginSignIn = () => { dispatch( startLoginWithEmailPassword( { email, password } ) ) }
 
   return (
     <AuthLayout title="Login">
-      <form onSubmit={ onSubmit }>
+      <form className='animate__animated animate__fadeIn animate__faster' onSubmit={ onSubmit }>
         <Grid container>
           <Grid item xs={ 12 } sx={ { mt : 2 } }>
             <TextField
