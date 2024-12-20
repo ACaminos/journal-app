@@ -1,6 +1,5 @@
 import { IconButton } from "@mui/material"
 import { JournalLayout } from "../layout/JournalLayout"
-import { NoteView } from "../views/NoteView"
 import { NothingSelectedView } from "../views/NothingSelectedView"
 import { AddOutlined } from "@mui/icons-material"
 import { useDispatch } from "react-redux"
