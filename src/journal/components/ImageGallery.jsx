@@ -1,10 +1,10 @@
-import { Box, ImageList, ImageListItem } from '@mui/material';
+import { ImageList, ImageListItem } from '@mui/material';
 import * as React from 'react';
 
 
-export const ImageGallery = ( { images } ) => {
+export const ImageGallery = ( { images=[] } ) => {
   return (
-      <ImageList variant="masonry" sx={ { width:'100%', height: 500 } } cols={ 4 } rowHeight={ 200 } gap={4}>
+      <ImageList variant="masonry" sx={ { width:'100%', height: 500 } } cols={ 4 } rowHeight={ 200 } gap={ 4 }>
         { images.map( ( image ) => (
           <ImageListItem key={ image }>
             <img
