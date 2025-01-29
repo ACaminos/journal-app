@@ -1,28 +1,28 @@
 # Journal App
 
-Journal App es una aplicación web desarrollada con **React**, que permite a los usuarios crear, editar y eliminar notas. Las notas pueden incluir un título, una descripción y múltiples imágenes, las cuales se almacenan en **Cloudinary**. Además, la aplicación ofrece autenticación mediante correo electrónico/contraseña o cuenta de **Google**.
+Journal App is a web application developed with React, which allows users to create, edit and delete notes. Notes can include a title, description, and multiple images, which are stored in Cloudinary. Additionally, the app offers authentication via email/password or **Google account**.
 
-## Tecnologías utilizadas
-- **React**: Framework para la construcción de interfaces de usuario.
-- **Redux y Redux Toolkit**: Manejo del estado global de la aplicación.
-- **Firebase**: Backend para autenticación y almacenamiento de datos.
-- **Cloudinary**: Almacenamiento y gestión de imágenes.
-- **Material UI**: Estilización y diseño de la interfaz.
+## Technologies used
+- **React**: Framework for building user interfaces.
+- **Redux and Redux Toolkit**: Management of the global state of the application.
+- **Firebase**: Backend for authentication and data storage.
+- **Cloudinary**: Image storage and management.
+- **UI Material**: Stylization and design of the interface.
 
-## Características principales
-- Registro e inicio de sesión con **correo y contraseña** o con **Google Account**.
-- Creación de **notas** con título, descripción e imágenes.
-- **Edición y eliminación** de notas existentes.
-- **Almacenamiento de imágenes** en **Cloudinary**.
-- Interfaz moderna y responsive gracias a **Material UI**.
+## Main Features
+- Registration and login with **email and password** or with **Google Account**.
+- Creation of **notes** with title, description and images.
+- **Editing and deleting** existing notes.
+- **Image storage** in **Cloudinary**.
+- Modern and responsive interface thanks to **Material UI**.
 
-## Instalación y configuración
-### Requisitos previos
-- Node 20.9.0
-- Cuenta en Firebase y Cloudinary
+## Installation and configuration
+### Prerequisites
+-Node 20.9.0
+- Firebase and Cloudinary account
 
-### Pasos para ejecutar el proyecto
-1. Clonar el repositorio:
+### Steps to run the project
+1. Clone the repository:
    ```sh
    git clone https://github.com/ACaminos/journal-app.git
    ```
@@ -30,12 +30,12 @@ Journal App es una aplicación web desarrollada con **React**, que permite a los
    cd journal-app
    ```
 
-2. Instalar dependencias:
+2. Install dependencies:
    ```sh
    yarn install
    ```
    
-3. Ejecutar la aplicación:
+3. Run the application:
    ```sh
    yarn start
    ```
