@@ -25,6 +25,8 @@ Journal App es una aplicación web desarrollada con **React**, que permite a los
 1. Clonar el repositorio:
    ```sh
    git clone https://github.com/ACaminos/journal-app.git
+   ```
+      ```sh
    cd journal-app
    ```
 
