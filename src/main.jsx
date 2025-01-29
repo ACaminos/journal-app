@@ -14,7 +14,11 @@ import { JournalApp } from './JournalApp.jsx';
 import './styles.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { Analytics } from '@vercel/analytics/react';
+
+//Analytics
+import { inject } from '@vercel/analytics';
+
+inject();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -23,6 +27,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <JournalApp />
       </BrowserRouter>
     </Provider>
-    <Analytics/>
   </React.StrictMode>,
 )
