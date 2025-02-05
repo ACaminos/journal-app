@@ -18,7 +18,7 @@ Journal App is a web application developed with React, which allows users to cre
 
 ## 📂 Installation and configuration
 ### Prerequisites
--Node 20.9.0
+- Node 20.9.0
 - Firebase and Cloudinary account
 
 ### Steps to run the project
@@ -26,16 +26,17 @@ Journal App is a web application developed with React, which allows users to cre
    ```sh
    git clone https://github.com/ACaminos/journal-app.git
    ```
+2️⃣ Access the project directory:
    ```sh
    cd journal-app
    ```
 
-2️⃣ Install dependencies:
+3️⃣ Install dependencies:
    ```sh
    yarn install
    ```
    
-3️⃣ Run the application:
+4️⃣ Run the application:
    ```sh
    yarn start
    ```
